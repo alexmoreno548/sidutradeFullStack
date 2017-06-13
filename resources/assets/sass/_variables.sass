@@ -1,0 +1,30 @@
+/*=============*/
+/*==VARIABLES==*/
+
+$azul: #1c2c76
+$size: 70.75%
+$naranja: #f15c24
+$blanco: #fff
+$font-family: Roboto, Arial
+$error: #D32F2F
+$celeste: #BBDEFB
+$info: #1976D2
+$diametro: 200px
+$amarillo: #ffd500
+$turquesa: #1fc1c1
+
+/*==VARIABLES==*/
+/*=============*/
+
+
+/*==============*/
+/*====MIXINS====*/
+
+@mixin borderWidthBefore($diametro)
+  border-width: 0 ($diametro/2) ($diametro * .27) ($diametro/2)
+
+@mixin borderWidthAfter($diametro)
+  border-width: ($diametro * .27) ($diametro/2) 0 ($diametro/2)
+
+/*====MIXINS====*/
+/*==============*/

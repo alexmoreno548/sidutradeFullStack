@@ -1,0 +1,57 @@
+.nosotros
+    position: relative
+
+.artNosotros
+    position: relative
+    .txt-nosotros
+        width: 40%
+        text-align: justify
+        h1
+            color: $naranja
+            font-size: 3em
+            span
+                color: $blanco
+                background: $naranja
+    .mision, .vision
+        padding: 0
+        text-align: justify
+        h2
+            color: $naranja
+.imgs
+    position: absolute
+    top: 37%
+    right: 0 
+    transform: translateY(-50%) rotate(45deg)
+    .img-container    
+        transition: box-shadow .25s ease
+        width: 250px
+        height: 250px
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+        position: relative
+        display: inline-block
+        margin-right: 5px
+        border-radius: 3px
+        overflow: hidden
+        &:last-child
+            margin-right: 0
+        
+        &:hover 
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+            cursor: pointer
+            .img 
+                transform: translate(-50%, -50%) rotate(-45deg) scale3D(1.25,1.25,1)
+        .img 
+            height: 200%
+            width: 200%
+            transition: transform 1s ease
+            position: absolute
+            top: 50%
+            will-change: transform
+            left: 50%
+            transform: translate(-50%, -50%) rotate(-45deg)
+            background-position: center
+            background-size: 100%
+            background-color: rgba(0, 0, 0, .12)
+
+.objetivos
+    margin-bottom: 50px

@@ -1,0 +1,78 @@
+.triangle
+  position: absolute
+  background-color: orange
+  text-align: left
+  &:before, &:after
+    content: ''
+    position: absolute
+    background-color: inherit
+  width: 10em
+  height: 10em
+  border-top-right-radius: 30%
+  &:before, &:after
+    width: 10em
+    height: 10em
+    border-top-right-radius: 30%
+  transform: rotate(-60deg) skewX(-30deg) scale(1, 0.866)
+  &:before
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%)
+  &:after
+    transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%)
+
+.triangle-img-container
+  height: 900px
+  width: 800px
+  position: absolute
+  overflow: hidden
+  z-index: 3
+
+
+.triangle-img-inner
+  border-radius: 3%
+  height: $size
+  width: $size
+  transform: rotate(45deg)
+  transform-origin: top left
+  position: absolute
+  left: 0
+  overflow: hidden
+  .triangle-img
+    background-size: cover
+    background-position: center
+    height: 150%
+    top: 50%
+    left: 50%
+    width: 150%
+    position: absolute
+    transform-origin: center
+    transform: translate(-50%, -50%) rotate(-45deg)
+
+
+.servicios
+  background: #FFFFFF
+  padding-bottom: 14rem
+  figcaption
+    clear: both
+    position: relative
+    text-align: center
+    margin-bottom: 25px
+    margin-right: 0%
+    .txt-info
+      text-align: justify
+      margin: 0 auto
+      width: 40%
+    hgroup
+      color: #1c2c76
+      h1, h2, h3
+        margin-top: 0
+      h1 span
+        background: $azul
+        color: $blanco
+  .imgs
+    position: relative
+    text-align: center
+    margin-left: 7rem
+    .img1, .img2
+      max-width: 300px
+      max-height: 300px
+      transform: rotate(45deg) translateY(50%)

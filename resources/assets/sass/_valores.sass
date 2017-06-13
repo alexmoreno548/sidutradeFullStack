@@ -1,0 +1,94 @@
+.valores__banner
+  height: 400px
+  margin: 0 0 20px 0
+  position: relative
+  width: 100%
+  background-image: url('./img/Banner5.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+
+.clearfix
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+.hexagon
+  margin-top: 30px
+  height: $diametro * .56
+  width: $diametro
+  background: #fff
+  position: relative
+  float: left
+  margin-right: 5px
+  &:before
+    position: absolute
+    content: ''
+    width: 0
+    height: 0
+    bottom: 100%
+    @include borderWidthBefore($diametro)
+    border-style: solid
+    border-color: #fff transparent
+  &:after 
+    position: absolute
+    top: 100%
+    content: ''
+    height: 0
+    width: 0
+    @include borderWidthAfter($diametro)
+    border-style: solid
+    border-color: #fff transparent
+    
+.top
+  float: left
+  clear: left
+  margin-left: 50px
+
+.hexagon:hover
+  background-color: rgba(69, 69, 69, .9)
+  &:before, &:after
+    border-color: rgba(69, 69, 69, .9) transparent
+
+.bg-img
+  background-position: 50% 50%
+  background-repeat: no-repeat
+
+.bg-pencil
+  background-image: url('./img/pencil.svg')
+
+.bg-graphic
+  background-image: url('./img/graphic.svg')
+
+.bg-man
+  background-image: url('./img/man.svg')
+
+.bg-networking
+  background-image: url('./img/networking.svg')
+
+.bg-business
+  background-image: url('./img/business.svg')
+
+.bg-naranja
+  background-color: $naranja
+  &:before, &:after
+    border-color: $naranja transparent
+
+.bg-azul
+  background-color: $azul
+  &:before, &:after
+    border-color: $azul transparent
+
+.bg-gris
+  background-color: grey
+  &:before, &:after
+    border-color: grey transparent
+
+.bg-amarillo
+  background-color: $amarillo
+  &:before, &:after
+    border-color: $amarillo transparent
+
+.bg-turquesa
+  background-color: $turquesa
+  &:before, &:after
+    border-color: $turquesa transparent
