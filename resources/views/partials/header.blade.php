@@ -1,6 +1,6 @@
 <header class="" id="supermenu">
     <div class="navegacion container">
-        <img src="./img/logo2.png" class="logotipo">
+        <img src="/img/logo2.png" class="logotipo">
         <nav class="menu">
             <ul>
                 <li><a href="#about">NOSOTROS</a></li>

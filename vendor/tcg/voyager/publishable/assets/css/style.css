@@ -1369,3 +1369,11 @@ a.text-action{color:#a3afb7}a.text-action,a.text-action:focus,a.text-action:hove
   background: none !important;
 }
 .navbar-nav.navbar-right li.dropdown.open .dropdown-menu {display: block}
+
+
+/*                  Custom styles          */
+.tableCustom
+{
+  background: white;
+  color: black;
+}

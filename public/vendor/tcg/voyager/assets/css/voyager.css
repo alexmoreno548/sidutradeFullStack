@@ -1411,3 +1411,23 @@ ul.checkbox label {
 .alerts .alert>ul {
   margin-top: 0;
 }
+
+
+
+/*     Custom css        */
+
+.cardDashboard
+{
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  margin-left: 4em;
+
+}
+
+
+.tableCustom
+{
+  background: white;
+  color: black;
+}

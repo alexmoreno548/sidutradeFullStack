@@ -6,19 +6,55 @@
 
 @section('content')
     <div class="page-content">
-        @include('voyager::alerts')
-        @include('voyager::dimmers')
-        <div style="padding:15px;">
-            <?php $google_analytics_client_id = Voyager::setting("google_analytics_client_id"); ?>
-            @if (isset($google_analytics_client_id) && !empty($google_analytics_client_id))
-                {{-- Google Analytics Embed --}}
-                <div id="embed-api-auth-container"></div>
-            @else
-                <p style="border-radius:4px; padding:20px; background:#fff; margin:0; color:#999; text-align:center;">
-                    To view analytics you'll need to get a google analytics client id and add it to your settings for the key <code>google_analytics_client_id</code>. Get your key in your Google developer console:
-                    <a href="https://console.developers.google.com" target="_blank">https://console.developers.google.com</a>
-                </p>
-            @endif
+        <div class="container">
+            <br>
+            <br>
+            
+            <!--  Card de noticias -->
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="panel widget center bgimage" style="margin-bottom:0;overflow:hidden;background-image:url('http://2www.ecestaticos.com/image/clipping/992/558/dcf293a8c3a8656ca05600e2fb97ebd8/imagen-sin-titulo.jpg');">
+                
+                    <div class="dimmer"></div>
+                    <div class="panel-content">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        <h4>0 Noticias</h4>
+                        <p>Existen 0 noticias</p>
+                        <a href="http://127.0.0.1:8000/admin/posts" class="btn btn-primary">Ver Todas las noticias</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!--  Card de Clientes -->
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="panel widget center bgimage" style="margin-bottom:0;overflow:hidden;background-image:url('http://www.businessinsider.in/photo/53149681/careers/entrepreneurship/Ever-heard-of-co-founder-dating-It-exists.jpg');">
+                
+                    <div class="dimmer"></div>
+                    <div class="panel-content">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                        <h4>0 Clientes</h4>
+                        <p>Existen 0 clientes</p>
+                        <a href="http://127.0.0.1:8000/admin/clients" class="btn btn-primary">Ver Todos los clientes</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Card de proveedores -->
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="panel widget center bgimage" style="margin-bottom:0;overflow:hidden;background-image:url('http://puntodemarketing.com/wp-content/uploads/2016/11/Z11.png');">
+                
+                    <div class="dimmer"></div>
+                    <div class="panel-content">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                        <h4>0 Proveedores</h4>
+                        <p>Existen 0 Proveedores</p>
+                        <a href="http://127.0.0.1:8000/admin/providers" class="btn btn-primary">Ver Todos los proveedores</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
 
             <div class="Dashboard Dashboard--full" id="analytics-dashboard">
                 <header class="Dashboard-header">

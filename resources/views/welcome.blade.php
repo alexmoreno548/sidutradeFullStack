@@ -61,7 +61,7 @@
                     <h2>Visión</h2>
                     <p>
                         Ser una empresa lider, solida y confiable con presencia internacional,
-                        que se distinga por proporcional calidad en sus productos y servicios,
+                        que se distinga por proporcionar calidad en sus productos y servicios,
                         con una gestion que se anticipe y se adapte al cambio, aprenda de la
                         experiencia e innove continuamente
                     </p>
@@ -102,7 +102,7 @@
             <figcaption class="container wow fadeInDown" data-wow-duration="2s">
                 <hgroup>
                     <h1><span>02</span>Servicios</h1>
-                    <h3>Continuar con el legado de la exelencia</h3>
+                    <h3>Continuar con el legado de la excelencia</h3>
                     <hr style="width: 50% ;border: 1px solid #ADADAD;">
                     <h2>Importaciones y Exportaciones</h2>
                 </hgroup>
@@ -203,42 +203,20 @@
         <header>
             <h1><span>05</span>Noticias</h1>
         </header>
-        <div class="col-xs-6 col-md-4">
-            <div class="thumb">
-                <figure>
-                    <img src="./img/1.jpg" alt=""> 
-                </figure>
-                <figcaption class="caption">
-                    <h3>Motocross</h3>
-                    <p>Deporte Extremo, que se desarrollo a partir del invento de la Motocicleta</p>
-                    <a href="" class="boton">Leer Mas</a>
-                </figcaption>
+        @foreach($Post as $post)
+            <div class="col-xs-6 col-md-4">
+                <div class="thumb">
+                    <figure>
+                        <img src="storage/{{$post->image}}" alt=""> 
+                    </figure>
+                    <figcaption class="caption">
+                        <h3>{{$post->title}}</h3>
+                        <p>{!!substr($post->excerpt, 0, 100)!!}</p>
+                        <a href="/notice/{{$post->id}}" class="boton">Leer Mas</a>
+                    </figcaption>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <div class="thumb">
-                <figure>
-                    <img src="./img/1.jpg" alt=""> 
-                </figure>
-                <figcaption class="caption">
-                    <h3>Motocross</h3>
-                    <p>Deporte Extremo, que se desarrollo a partir del invento de la Motocicleta</p>
-                    <a href="" class="boton">Leer Mas</a>
-                </figcaption>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <div class="thumb">
-                <figure>
-                    <img src="./img/1.jpg" alt=""> 
-                </figure>
-                <figcaption class="caption">
-                    <h3>Motocross</h3>
-                    <p>Deporte Extremo, que se desarrollo a partir del invento de la Motocicleta</p>
-                    <a href="" class="boton">Leer Mas</a>
-                </figcaption>
-            </div>
-        </div>
+        @endforeach
         </div>
     </section>
     <!--SECTION FIN NOTICIAS-->
@@ -273,159 +251,18 @@
             <iframe class="col-md-12" style="max-height:525px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.2736027341293!2d-62.78631238315742!3d8.275543862113699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8dcbf8d0bbde1f49%3A0xf8be7334314d4f2a!2sFundacion+Lala%2C+Av.+Caracas%2C+Ciudad+Guayana+8050%2C+Bol%C3%ADvar!5e0!3m2!1ses-419!2sve!4v1495836481244" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             <section class="formulario container-fluid">
                 <div class="col-md-12 formulario__usuario">
-                    <form action="" method="GET" name="formulario__usuario">
+                    {{ Form::open(['route' => 'clients.store', 'method' => 'POST', 'files' => true]) }}
                         <fieldset>
-                            <legend>Usuarios</legend>
-                            <div class="inputs">
-                            <div class="form-group name-box col-md-6 col-sm-6">
-                            <label for="name" class=""> Nombre Representante </label>
-                            <input class="form-control" type="text" id="name" name="name" />
-                            </div>
-                            <div class="form-group empresa-box col-md-6 col-sm-6">
-                            <label for="empresa" class=""> Empresa </label>
-                            <input class="form-control" type="text" id="empresa" name="empresa" />
-                            </div>
-                            <div class="form-group email-box col-md-6 col-sm-6">
-                            <label for="email" class=""> Correo electrónico </label>
-                            <input class="form-control" type="email" id="email" name="email" />
-                            </div>
-                            <div class="form-group ubicacion-box col-md-6 col-sm-6">
-                            <label for="ubicacion" class=""> Ubicación fiscal </label>
-                            <input class="form-control" type="text" id="ubicacion" name="ubicacion" />
-                            </div>
-                        </div>
+                        @include('forms.client')
                         
-                        <div class="combox">
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Producto
-                            <select name="producto" class="form-control" id="producto">
-                                <option value="">Option1</option>
-                                <option value="">Option2</option>
-                                <option value="">Option3</option>
-                            </select>
-                            </label>
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Cantidad(Ton.)
-                            <select name="cantidad" class="form-control" id="cantidad">
-                                <option value="">cantidad1</option>
-                                <option value="">cantidad2</option>
-                                <option value="">cantidad3</option>
-                            </select>
-                            </label>
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Entrega
-                            <select name="entrega" class="form-control" id="entrega">
-                                <option value="">Entrega1</option>
-                                <option value="">Entrega2</option>
-                                <option value="">Entrega3</option>
-                            </select>
-                            </label>
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Puerto de destino
-                            <select name="puerto" class="form-control" id="puerto">
-                                <option value="">destino1</option>
-                                <option value="">destino2</option>
-                                <option value="">destino3</option>
-                            </select>
-                            </label>
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Consumo Mes
-                            <select name="Consumo" class="form-control" id="Consumo">
-                                <option value="">consumo1</option>
-                                <option value="">consumo2</option>
-                                <option value="">consumo3</option>
-                            </select>
-                            </label>
-                            <label class="form-group col-md-4 col-sm-4 col-xs-12">Frecuencia inventario
-                            <select name="frecuencia" class="form-control" id="frecuencia">
-                                <option value="">frecuencia1</option>
-                                <option value="">frecuencia2</option>
-                                <option value="">frecuencia3</option>
-                            </select>
-                            </label>
-                        </div>
-                        
-                        <label for="" class="form-group col-md-12 col-sm-12 col-xs-12"> Comentario
-                            <textarea class="form-control" name="" id="" cols="30" rows="1"></textarea>
-                        </label>
-
-                            <div class="form-group btns col-md-12">
-                            <label for="fileUser">
-                                <span class="btn btn-warning">Adjuntar Archivo</span>
-                                <input type="file" id="fileUser" class=""/>
-                            </label>
-                            <input type="submit" class="btn btn-primary" value="Enviar" /> 
-                            </div>
-                            
-
                         </fieldset>
-                    </form>
+                    {{ Form::close() }}
                 </div>
 
                 <div class="col-md-12 formulario__proveedor">
-                    <form action="" method="GET" name="formulario__usuario">
-                        <fieldset>
-                            <legend>Proveedores</legend>
-                            <div class="inputs">
-                                <div class="form-group name-box col-md-6 col-sm-6">
-                                    <label for="name" class=""> Nombre Representante </label>
-                                    <input class="form-control" type="text" id="name" name="name" />
-                                </div>
-                                <div class="form-group empresa-box col-md-6 col-sm-6">
-                                    <label for="empresa" class=""> Empresa </label>
-                                    <input class="form-control" type="text" id="empresa" name="empresa" />
-                                </div>
-                                <div class="form-group email-box col-md-6 col-sm-6">
-                                    <label for="email" class=""> Correo electrónico </label>
-                                    <input class="form-control" type="email" id="email" name="email" />
-                                </div>
-                                <div class="form-group ubicacion-box col-md-6 col-sm-6">
-                                    <label for="ubicacion" class=""> Ubicación fiscal </label>
-                                    <input class="form-control" type="text" id="ubicacion" name="ubicacion" />
-                                </div>
-                            </div>
-                        
-                            <div class="combox">
-                                <label class="form-group col-md-3 col-sm-6 col-xs-12">Producto
-                                    <select name="producto" class="form-control" id="producto">
-                                        <option value="">Option1</option>
-                                        <option value="">Option2</option>
-                                        <option value="">Option3</option>
-                                    </select>
-                                </label>
-                                <label class="form-group col-md-3 col-sm-6 col-xs-12">Cantidad(Ton.)
-                                    <select name="cantidad" class="form-control" id="cantidad">
-                                        <option value="">cantidad1</option>
-                                        <option value="">cantidad2</option>
-                                        <option value="">cantidad3</option>
-                                    </select>
-                                </label>
-                                <label class="form-group col-md-3 col-sm-6 col-xs-12">Entrega
-                                    <select name="entrega" class="form-control" id="entrega">
-                                        <option value="">Entrega1</option>
-                                        <option value="">Entrega2</option>
-                                        <option value="">Entrega3</option>
-                                    </select>
-                                </label>
-                                <label class="form-group col-md-3 col-sm-6 col-xs-12">Puerto de destino
-                                    <select name="puerto" class="form-control" id="puerto">
-                                        <option value="">destino1</option>
-                                        <option value="">destino2</option>
-                                        <option value="">destino3</option>
-                                    </select>
-                                </label>
-                            </div>
-                        
-                            <label for="" class="form-group col-md-12 col-sm-12 col-xs-12"> Comentario
-                                <textarea class="form-control" name="" id="" cols="30" rows="1"></textarea>
-                            </label>
-
-                            <div class="form-group btns col-md-12">
-                                <label for="fileProvider">
-                                    <span class="btn btn-warning">Adjuntar Archivo</span>
-                                    <input type="file" id="fileProvider" class=""/>
-                                </label>
-                                <input type="submit" class="btn btn-primary" value="Enviar" /> 
-                            </div>
-                            
-
-                        </fieldset>
-                    </form>
+                    {{ Form::open(['route' => 'providers.store', 'method' => 'POST', 'files' => true]) }}
+                        @include('forms.provider')
+                    {{ Form::close() }}
                 </div>
             </section>
         </div>
@@ -435,13 +272,13 @@
     
 
 @section('js')
-    <script src="./js/formulario.js"></script>
-    <script src="./js/parallaxBanner.js"></script>
-    <script src="./js/buttonUp.js"></script>
-    <script src="./js/smoothScroll.js"></script>
-    <script src="./js/wow.min.js"></script>
-    <script src="./js/swiper.min.js"></script>
-    <script>
+    {{Html::script('/js/formulario.js')}}
+    {{Html::script('/js/parallaxBanner.js')}}
+    {{Html::script('/js/buttonUp.js')}}
+    {{Html::script('/js/smoothScroll.js')}}
+    {{Html::script('/js/wow.min.js')}}
+    {{Html::script('/js/swiper.min.js')}}
+    <script type="text/javascript">
         new WOW().init();
 
         var swiper = new Swiper('.swiper-container', {

@@ -8,11 +8,11 @@ class welcomeController extends Controller
 {
     public function index()
     {
-    	return view ('welcome', ['Posts' => Post::all()]);
+    	return view ('welcome', ['Post' => Post::all()]);
     }
 
-    public function show()
+    public function show($id)
     {
-    	return view('showNotice');
+    	return view('showNotice', ['Post' => Post::findOrFail($id)]);
     }
 }

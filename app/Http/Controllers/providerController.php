@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\Models\Provider;
+use App\Http\Requests\providerCreateRequest;
 
 class providerController extends Controller
 {
@@ -13,7 +15,7 @@ class providerController extends Controller
      */
     public function index()
     {
-        return view ('vendor.voyager.providers.browse');
+        return view ('vendor.voyager.providers.browse', ['Provider' => Provider::all()]);
     }
 
     /**
@@ -32,9 +34,35 @@ class providerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(providerCreateRequest $request)
     {
-        //
+        //creamos la ruta
+        $fileRoute = "files/providers/";
+
+        //damos el correcto nombre al archivo
+        $fileName = $request->file('archivo')->getClientOriginalName();
+
+        //creamos el path con la ruta y el nombre
+        $filePath = $fileRoute.$fileName;
+
+        //guardamos en la carpeta definida en la ruta con el nombre del archivo
+        $request->file('archivo')->move($fileRoute, $fileName);
+        
+        //guardamos los valores en la base de datos
+        Provider::create
+        ([
+            'nombre_representante' => $request['nombre_representante'],
+            'empresa' => $request['empresa'],
+            'email' => $request['email'],
+            'ubicacion_fiscal' => $request['ubicacion_fiscal'],
+            'producto' => $request['producto'],
+            'puerto_destino' => $request['puerto_destino'],
+            'cantidad' => $request['cantidad'],
+            'comentarios' => $request['comentarios'],
+            'archivo' => $filePath,
+        ]);
+
+        return ('se envio bien');
     }
 
     /**
@@ -80,5 +108,10 @@ class providerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+     public function file($file)
+    {
+      return redirect()->route('fileProvider', [$file]);
     }
 }
