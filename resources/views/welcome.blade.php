@@ -207,11 +207,11 @@
             <div class="col-xs-6 col-md-4">
                 <div class="thumb">
                     <figure>
-                        <img src="storage/{{$post->image}}" alt=""> 
+                        <img src="storage/{{$post->image}}" alt="" style="    height: 16em;"> 
                     </figure>
                     <figcaption class="caption">
                         <h3>{{$post->title}}</h3>
-                        <p>{!!substr($post->excerpt, 0, 100)!!}</p>
+                        <p style="max-height:3em; overflow: auto;">{!!substr($post->excerpt, 0, 100)!!}...</p>
                         <a href="/notice/{{$post->id}}" class="boton">Leer Mas</a>
                     </figcaption>
                 </div>
@@ -251,7 +251,7 @@
             <iframe class="col-md-12" style="max-height:525px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.2736027341293!2d-62.78631238315742!3d8.275543862113699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8dcbf8d0bbde1f49%3A0xf8be7334314d4f2a!2sFundacion+Lala%2C+Av.+Caracas%2C+Ciudad+Guayana+8050%2C+Bol%C3%ADvar!5e0!3m2!1ses-419!2sve!4v1495836481244" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             <section class="formulario container-fluid">
                 <div class="col-md-12 formulario__usuario">
-                    {{ Form::open(['route' => 'clients.store', 'method' => 'POST', 'files' => true]) }}
+                    {{ Form::open(['route' => 'clients.store', 'method' => 'POST', 'files' => true, 'id' => 'formClient']) }}
                         <fieldset>
                         @include('forms.client')
                         
@@ -260,8 +260,10 @@
                 </div>
 
                 <div class="col-md-12 formulario__proveedor">
-                    {{ Form::open(['route' => 'providers.store', 'method' => 'POST', 'files' => true]) }}
-                        @include('forms.provider')
+                    {{ Form::open(['route' => 'providers.store', 'method' => 'POST', 'files' => true, 'id' => 'formProvider']) }}
+                        <fieldset>
+                            @include('forms.provider')
+                        </fieldset>
                     {{ Form::close() }}
                 </div>
             </section>

@@ -66,6 +66,7 @@ Route::group(['as' => 'voyager.'], function () {
         });
 
         // Settings
+        /*
         Route::group([
             'as'     => 'settings.',
             'prefix' => 'settings',
@@ -79,7 +80,10 @@ Route::group(['as' => 'voyager.'], function () {
             Route::get('{id}/delete_value', ['uses' => $namespacePrefix.'VoyagerSettingsController@delete_value', 'as' => 'delete_value']);
         });
 
+        */
+
         // Admin Media
+        /*
         Route::group([
             'as'     => 'media.',
             'prefix' => 'media',
@@ -94,6 +98,7 @@ Route::group(['as' => 'voyager.'], function () {
             Route::post('upload', ['uses' => $namespacePrefix.'VoyagerMediaController@upload',             'as' => 'upload']);
             Route::post('remove', ['uses' => $namespacePrefix.'VoyagerMediaController@remove',             'as' => 'remove']);
         });
+        */
 
         // Database Routes
         Route::group([

@@ -8,6 +8,7 @@ class clientCreateRequest extends FormRequest
 {
 
     protected $errorBag = 'client';
+    protected $redirect = '/#formClient';
     /**
      * Determine if the user is authorized to make this request.
      *

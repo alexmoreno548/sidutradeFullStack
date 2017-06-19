@@ -18,8 +18,8 @@
                     <div class="dimmer"></div>
                     <div class="panel-content">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        <h4>0 Noticias</h4>
-                        <p>Existen 0 noticias</p>
+                        <h4>Noticias</h4>
+                        <br>
                         <a href="http://127.0.0.1:8000/admin/posts" class="btn btn-primary">Ver Todas las noticias</a>
                     </div>
                 </div>
@@ -33,8 +33,8 @@
                     <div class="dimmer"></div>
                     <div class="panel-content">
                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                        <h4>0 Clientes</h4>
-                        <p>Existen 0 clientes</p>
+                        <h4>Clientes</h4>
+                        <br>
                         <a href="http://127.0.0.1:8000/admin/clients" class="btn btn-primary">Ver Todos los clientes</a>
                     </div>
                 </div>
@@ -48,8 +48,8 @@
                     <div class="dimmer"></div>
                     <div class="panel-content">
                         <i class="fa fa-truck" aria-hidden="true"></i>
-                        <h4>0 Proveedores</h4>
-                        <p>Existen 0 Proveedores</p>
+                        <h4>Proveedores</h4>
+                        <br>
                         <a href="http://127.0.0.1:8000/admin/providers" class="btn btn-primary">Ver Todos los proveedores</a>
                     </div>
                 </div>

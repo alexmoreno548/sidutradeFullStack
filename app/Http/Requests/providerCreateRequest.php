@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class providerCreateRequest extends FormRequest
 {
+    protected $errorBag = 'provider';
+    protected $redirect = '/#formProvider';
     /**
      * Determine if the user is authorized to make this request.
      *

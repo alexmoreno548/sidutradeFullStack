@@ -37,10 +37,7 @@ class clientController extends Controller
     public function store(clientCreateRequest $request)
     {
 
-        if ($validator->fails())
-        {
-            return Redirect::to('welcome')->withErrors($validator, '1');
-        }
+        
         //creamos la ruta
         $fileRoute = "files/clients/";
 
